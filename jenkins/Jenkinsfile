@@ -16,17 +16,10 @@ pipeline {
                 }
             }
         }
-        stage('Deliver') {
-    steps {
-        script {
-            if (isUnix()) {
-                sh './jenkins/scripts/deliver.sh'
-            } else {
-                bat 'bat jenkins/scripts/deliver.bat'
+  stage('Deliver') {
+            steps {
+                bat './jenkins/scripts/deliver.bat'
             }
         }
-    }
-}
-
     }
 }
